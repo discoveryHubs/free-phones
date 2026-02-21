@@ -73,13 +73,15 @@ const recentPosts = sortedPosts.filter((post: any) => !post.data.featured);
       
       <ul class="space-y-6">
         {
-          recentPosts.slice(0, 4).map((post: any) => (
-            <Card
-              href={`/posts/${post.slug}/`}
-              frontmatter={post.data}
-              secHeading={false}
-            />
-          ))
+          recentPosts.slice(0, 4).map(
+            ({ data, slug }) => (
+              <Card
+                href={`/posts/${slug}/`}
+                frontmatter={data}
+                secHeading={false}
+              />
+            )
+          )
         }
       </ul>
     </section>
@@ -90,7 +92,6 @@ const recentPosts = sortedPosts.filter((post: any) => !post.data.featured);
 </Layout>
 
 <style>
-  /* AstroPaper default styling settings */
   #main-content {
     @apply mx-auto w-full max-w-full pb-12;
   }
