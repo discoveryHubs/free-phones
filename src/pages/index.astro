@@ -9,8 +9,7 @@ import getSortedPosts from "@utils/getSortedPosts";
 
 const posts = await getCollection("blog");
 const sortedPosts = getSortedPosts(posts);
-const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
-const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
+const recentPosts = sortedPosts.filter((post: any) => !post.data.featured);
 ---
 
 <Layout>
@@ -74,16 +73,13 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
       
       <ul class="space-y-6">
         {
-          recentPosts.map(
-            ({ data, slug }, index) =>
-              index < 4 && (
-                <Card
-                  href={`/posts/${slug}/`}
-                  frontmatter={data}
-                  secHeading={false}
-                />
-              )
-          )
+          recentPosts.slice(0, 4).map((post: any) => (
+            <Card
+              href={`/posts/${post.slug}/`}
+              frontmatter={post.data}
+              secHeading={false}
+            />
+          ))
         }
       </ul>
     </section>
