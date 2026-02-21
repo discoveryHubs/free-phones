@@ -1,19 +1,13 @@
 ---
 import { getCollection } from "astro:content";
-import Layout from "@/layouts/Layout.astro";
-import Header from "@/components/Header.astro";
-import Footer from "@/components/Footer.astro";
-import Socials from "@/components/Socials.astro";
-import LinkButton from "@/components/LinkButton.astro";
-import Card from "@/components/Card.astro";
-import getSortedPosts from "@/utils/getSortedPosts";
-import IconRss from "@/assets/icons/IconRss.svg";
-import IconArrowRight from "@/assets/icons/IconArrowRight.svg";
-import { SITE } from "@/config";
-import { SOCIALS } from "@/constants";
+import Layout from "@layouts/Layout.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import Hr from "@components/Hr.astro";
+import Card from "@components/Card";
+import getSortedPosts from "@utils/getSortedPosts";
 
 const posts = await getCollection("blog");
-
 const sortedPosts = getSortedPosts(posts);
 const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
 const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
@@ -21,101 +15,87 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 
 <Layout>
   <Header />
-  <main id="main-content" data-layout="index" class="app-layout">
-    <section id="hero" class:list={["pt-8 pb-6", "border-b border-border"]}>
-      <h1 class="my-4 inline-block text-4xl font-bold sm:my-8 sm:text-5xl">
-        Mingalaba
+  
+  <main id="main-content" class="pb-12">
+    
+    <section class="relative pt-16 pb-12 flex flex-col items-center justify-center text-center px-4">
+      <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-100 text-blue-800 text-sm font-bold mb-6 shadow-sm">
+        <span class="flex w-2.5 h-2.5 bg-blue-600 rounded-full mr-2 animate-pulse"></span>
+        100% Free Government Programs 2026
+      </div>
+      
+      <h1 class="text-4xl md:text-6xl font-extrabold text-skin-base tracking-tight mb-6 leading-tight">
+        Get Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Free Government Phone & Tablet</span> Today!
       </h1>
-      <a
-        target="_blank"
-        href="/rss.xml"
-        class="inline-block"
-        aria-label="rss feed"
-        title="RSS Feed"
-      >
-        <IconRss
-          width={20}
-          height={20}
-          class="scale-125 stroke-accent stroke-3 rtl:-rotate-90"
-        />
-        <span class="sr-only">RSS Feed</span>
-      </a>
-
-      <p>
-        AstroPaper is a minimal, responsive, accessible and SEO-friendly Astro
-        blog theme. This theme follows best practices and provides accessibility
-        out of the box. Light and dark mode are supported by default. Moreover,
-        additional color schemes can also be configured.
+      
+      <p class="text-lg md:text-xl text-skin-muted max-w-2xl mb-10 leading-relaxed">
+        Qualify through Lifeline programs instantly. Zero hidden fees, free monthly data, unlimited talk & text, and nationwide coverage. Don't miss your chance!
       </p>
-      <p class="mt-2">
-        Read the blog posts or check
-        <LinkButton
-          class="underline decoration-dashed underline-offset-4 hover:text-accent"
-          href="https://github.com/satnaing/astro-paper#readme"
-        >
-          README
-        </LinkButton> for more info.
-      </p>
-      {
-        // only display if at least one social link is enabled
-        SOCIALS.length > 0 && (
-          <div class="mt-4 flex max-sm:flex-col sm:items-center">
-            <div class="me-2 mb-1 whitespace-nowrap sm:mb-0">Social Links:</div>
-            <Socials />
-          </div>
-        )
-      }
+      
+      <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
+        <a href="/posts" class="px-8 py-4 rounded-xl bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold text-lg hover:from-blue-700 hover:to-blue-800 transition-all shadow-lg hover:shadow-blue-500/30 transform hover:-translate-y-1">
+          Apply Now - It's Free
+        </a>
+        <a href="/about" class="px-8 py-4 rounded-xl bg-skin-card border-2 border-skin-line text-skin-base font-bold text-lg hover:bg-skin-fill transition-all">
+          Check Eligibility
+        </a>
+      </div>
     </section>
 
-    {
-      featuredPosts.length > 0 && (
-        <section
-          id="featured"
-          class:list={[
-            "pt-12 pb-6",
-            { "border-b border-border": recentPosts.length > 0 },
-          ]}
-        >
-          <h2 class="text-2xl font-semibold tracking-wide">Featured</h2>
-          <ul>
-            {featuredPosts.map(data => (
-              <Card variant="h3" {...data} />
-            ))}
-          </ul>
-        </section>
-      )
-    }
+    <Hr />
 
-    {
-      recentPosts.length > 0 && (
-        <section id="recent-posts" class="pt-12 pb-6">
-          <h2 class="text-2xl font-semibold tracking-wide">Recent Posts</h2>
-          <ul>
-            {recentPosts.map(
-              (data, index) =>
-                index < SITE.postPerIndex && <Card variant="h3" {...data} />
-            )}
-          </ul>
-        </section>
-      )
-    }
+    <section class="py-12 px-4 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <div class="p-8 bg-skin-card rounded-2xl border border-skin-line shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+        <div class="w-14 h-14 bg-green-100 text-green-600 rounded-xl flex items-center justify-center mb-6 text-3xl">📱</div>
+        <h3 class="text-2xl font-bold mb-3 text-skin-base">Latest Devices</h3>
+        <p class="text-skin-muted">Get the latest Android and Apple smartphones or tablets completely free of charge.</p>
+      </div>
+      
+      <div class="p-8 bg-skin-card rounded-2xl border border-skin-line shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+        <div class="w-14 h-14 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center mb-6 text-3xl">⚡</div>
+        <h3 class="text-2xl font-bold mb-3 text-skin-base">Free Monthly Data</h3>
+        <p class="text-skin-muted">Enjoy high-speed internet, unlimited talk, and unlimited text every single month.</p>
+      </div>
 
-    <div class="my-8 text-center">
-      <LinkButton href="/posts/">
-        All Posts
-        <IconArrowRight class="inline-block rtl:-rotate-180" />
-      </LinkButton>
-    </div>
+      <div class="p-8 bg-skin-card rounded-2xl border border-skin-line shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+        <div class="w-14 h-14 bg-orange-100 text-orange-600 rounded-xl flex items-center justify-center mb-6 text-3xl">🛡️</div>
+        <h3 class="text-2xl font-bold mb-3 text-skin-base">No Hidden Fees</h3>
+        <p class="text-skin-muted">100% legitimate FCC-approved programs. No credit checks and zero surprise bills.</p>
+      </div>
+    </section>
+
+    <Hr />
+
+    <section class="py-12 px-4 max-w-4xl mx-auto">
+      <div class="flex items-center justify-between mb-8">
+        <h2 class="text-3xl font-extrabold text-skin-base">Latest Guides & Updates</h2>
+        <a href="/posts" class="text-blue-600 font-semibold hover:underline">View All &rarr;</a>
+      </div>
+      
+      <ul class="space-y-6">
+        {
+          recentPosts.map(
+            ({ data, slug }, index) =>
+              index < 4 && (
+                <Card
+                  href={`/posts/${slug}/`}
+                  frontmatter={data}
+                  secHeading={false}
+                />
+              )
+          )
+        }
+      </ul>
+    </section>
+
   </main>
+
   <Footer />
 </Layout>
 
-<script>
-  document.addEventListener("astro:page-load", () => {
-    const indexLayout = (document.querySelector("#main-content") as HTMLElement)
-      ?.dataset?.layout;
-    if (indexLayout) {
-      sessionStorage.setItem("backUrl", "/");
-    }
-  });
-</script>
+<style>
+  /* AstroPaper default styling settings */
+  #main-content {
+    @apply mx-auto w-full max-w-full pb-12;
+  }
+</style>
