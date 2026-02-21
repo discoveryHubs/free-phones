@@ -725,12 +725,15 @@ const SITE_DESCRIPTION = "Get your free government tablet or phone through legit
                   const content = btn.nextElementSibling;
                   const icon = btn.querySelector('.faq-icon');
                   
-                  // Toggle current
-                  content.classList.toggle('hidden');
-                  if (content.classList.contains('hidden')) {
-                      icon.classList.remove('rotate-180');
-                  } else {
-                      icon.classList.add('rotate-180');
+                  // Add null checks for TypeScript (Astro check)
+                  if (content && icon) {
+                      // Toggle current
+                      content.classList.toggle('hidden');
+                      if (content.classList.contains('hidden')) {
+                          icon.classList.remove('rotate-180');
+                      } else {
+                          icon.classList.add('rotate-180');
+                      }
                   }
               });
           });
