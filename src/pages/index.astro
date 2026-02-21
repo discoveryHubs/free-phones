@@ -4,6 +4,14 @@ import Layout from "../layouts/Layout.astro";
 const SITE_URL = "https://free-phones.pages.dev";
 const SITE_TITLE = "Free Government Tablets & Phones 2026 | Apply Today";
 const SITE_DESCRIPTION = "Get your free government tablet or phone through legitimate programs. Zero hidden fees, fast approval. Check eligibility and apply safely today.";
+
+// Define common class strings to keep code clean
+const containerClass = "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8";
+const sectionPadding = "py-16 lg:py-24";
+const btnPrimary = "inline-flex items-center justify-center px-6 py-3 text-sm md:text-base font-semibold text-white bg-blue-600 rounded-xl hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-blue-600/30 transform hover:-translate-y-0.5";
+const btnSecondary = "inline-flex items-center justify-center px-6 py-3 text-sm md:text-base font-semibold text-blue-600 bg-white border border-blue-200 rounded-xl hover:bg-blue-50 transition-all duration-300 shadow-sm transform hover:-translate-y-0.5";
+const cardInteractive = "bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 overflow-hidden";
+const navLinkClass = "flex items-center space-x-1 text-gray-600 hover:text-blue-600 font-medium text-sm px-3 py-2 rounded-lg hover:bg-blue-50 transition-all";
 ---
 
 <Layout
@@ -13,7 +21,7 @@ const SITE_DESCRIPTION = "Get your free government tablet or phone through legit
 >
   <!-- Navbar -->
   <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-gray-100">
-      <div class="container-custom">
+      <div class={containerClass}>
           <div class="flex justify-between h-20 items-center">
               <!-- Logo -->
               <a href="#" class="flex items-center space-x-2 group">
@@ -28,11 +36,11 @@ const SITE_DESCRIPTION = "Get your free government tablet or phone through legit
 
               <!-- Desktop Menu -->
               <div class="hidden lg:flex items-center space-x-2">
-                  <a href="#programs" class="nav-link">Programs</a>
+                  <a href="#programs" class={navLinkClass}>Programs</a>
                   
                   <!-- Dropdown -->
                   <div class="relative group">
-                      <button class="nav-link flex items-center">
+                      <button class={navLinkClass}>
                           <span>Eligibility</span>
                           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -50,9 +58,9 @@ const SITE_DESCRIPTION = "Get your free government tablet or phone through legit
                       </div>
                   </div>
                   
-                  <a href="#faq" class="nav-link">FAQ</a>
-                  <a href="#contact" class="nav-link">Contact</a>
-                  <a href="#apply" class="btn-primary ml-4">Apply Now</a>
+                  <a href="#faq" class={navLinkClass}>FAQ</a>
+                  <a href="#contact" class={navLinkClass}>Contact</a>
+                  <a href="#apply" class={`${btnPrimary} ml-4`}>Apply Now</a>
               </div>
 
               <!-- Mobile menu button -->
@@ -73,7 +81,7 @@ const SITE_DESCRIPTION = "Get your free government tablet or phone through legit
               <a href="#eligibility" class="block px-3 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50">Eligibility</a>
               <a href="#providers" class="block px-3 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50">Providers</a>
               <a href="#faq" class="block px-3 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50">FAQ</a>
-              <a href="#apply" class="block mt-4 w-full text-center btn-primary">Apply Now</a>
+              <a href="#apply" class={`block mt-4 w-full text-center ${btnPrimary}`}>Apply Now</a>
           </div>
       </div>
   </nav>
@@ -81,18 +89,15 @@ const SITE_DESCRIPTION = "Get your free government tablet or phone through legit
   <main class="w-full bg-slate-50 min-h-screen">
       <!-- Hero Section -->
       <section class="relative pt-20 pb-32 lg:pt-32 lg:pb-40 overflow-hidden bg-blue-900 text-white">
-          <!-- Background decorative elements -->
           <div class="absolute inset-0 overflow-hidden">
               <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070&auto=format&fit=crop" alt="Background" class="w-full h-full object-cover opacity-20 mix-blend-overlay" />
               <div class="absolute inset-0 bg-gradient-to-br from-blue-900/90 via-blue-800/80 to-indigo-900/90"></div>
-              <!-- Circles -->
               <div class="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-blue-500 rounded-full blur-3xl opacity-30 animate-pulse"></div>
               <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-72 h-72 bg-purple-500 rounded-full blur-3xl opacity-30 animate-pulse" style="animation-delay: 2s;"></div>
           </div>
 
-          <div class="container-custom relative z-10">
+          <div class={`${containerClass} relative z-10`}>
               <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-                  <!-- Text Content -->
                   <div>
                       <div class="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold bg-white/10 text-blue-100 border border-white/20 mb-6 backdrop-blur-sm">
                           <span class="flex h-2 w-2 rounded-full bg-green-400 mr-2"></span>
@@ -114,14 +119,6 @@ const SITE_DESCRIPTION = "Get your free government tablet or phone through legit
                               <svg class="h-5 w-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                               <span class="text-blue-50 font-medium">Fast 7-day processing</span>
                           </div>
-                          <div class="flex items-center space-x-3">
-                              <svg class="h-5 w-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                              <span class="text-blue-50 font-medium">Trusted providers only</span>
-                          </div>
-                          <div class="flex items-center space-x-3">
-                              <svg class="h-5 w-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                              <span class="text-blue-50 font-medium">Free shipping included</span>
-                          </div>
                       </div>
 
                       <div class="flex flex-col sm:flex-row gap-4">
@@ -135,7 +132,6 @@ const SITE_DESCRIPTION = "Get your free government tablet or phone through legit
                       </div>
                   </div>
 
-                  <!-- Stats Floating Box -->
                   <div class="relative">
                       <div class="bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
                           <h3 class="text-2xl font-bold text-white mb-8 border-b border-white/10 pb-4">Program Success 2026</h3>
@@ -148,18 +144,6 @@ const SITE_DESCRIPTION = "Get your free government tablet or phone through legit
                                   <div class="text-3xl font-extrabold text-green-400 mb-1">95%</div>
                                   <div class="text-blue-200 text-sm font-medium">Approval Rate</div>
                               </div>
-                              <div class="text-center p-4 bg-white/5 rounded-2xl border border-white/10">
-                                  <div class="text-3xl font-extrabold text-purple-300 mb-1">50+</div>
-                                  <div class="text-blue-200 text-sm font-medium">Device Models</div>
-                              </div>
-                              <div class="text-center p-4 bg-white/5 rounded-2xl border border-white/10">
-                                  <div class="text-3xl font-extrabold text-orange-300 mb-1">$0</div>
-                                  <div class="text-blue-200 text-sm font-medium">Hidden Fees</div>
-                              </div>
-                          </div>
-                          <div class="mt-6 p-4 bg-green-500/20 rounded-xl border border-green-400/30 flex items-start space-x-3">
-                              <svg class="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                              <p class="text-green-50 text-sm leading-relaxed"><strong>Latest Update:</strong> Lifeline program is actively accepting applications with expanded Samsung & Apple device options for eligible users.</p>
                           </div>
                       </div>
                   </div>
@@ -167,57 +151,39 @@ const SITE_DESCRIPTION = "Get your free government tablet or phone through legit
           </div>
       </section>
 
-      <!-- Key Takeaways Section (Overlapping Hero) -->
-      <section class="container-custom -mt-16 relative z-20">
-          <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 md:p-8">
-              <h2 class="text-2xl font-bold text-gray-900 mb-6">Key Takeaways Before You Start</h2>
+      <!-- Key Takeaways -->
+      <section class={`${containerClass} -mt-16 relative z-20`}>
+          <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 md:p-8 text-gray-900">
+              <h2 class="text-2xl font-bold mb-6">Key Takeaways Before You Start</h2>
               <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-                  <!-- Item 1 -->
-                  <div class="flex flex-col items-start p-4 rounded-xl hover:bg-slate-50 transition-colors">
+                  <div class="flex flex-col items-start p-4 rounded-xl hover:bg-slate-50 transition-colors text-gray-800">
                       <div class="w-12 h-12 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mb-4">
-                          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
                       </div>
-                      <h3 class="font-bold text-gray-900 mb-2">Legitimate Program</h3>
+                      <h3 class="font-bold mb-2">Legitimate Program</h3>
                       <p class="text-sm text-gray-600">Lifeline is the primary federal program offering guaranteed assistance.</p>
                   </div>
-                  <!-- Item 2 -->
-                  <div class="flex flex-col items-start p-4 rounded-xl hover:bg-slate-50 transition-colors">
+                  <div class="flex flex-col items-start p-4 rounded-xl hover:bg-slate-50 transition-colors text-gray-800">
                       <div class="w-12 h-12 rounded-full bg-green-100 text-green-600 flex items-center justify-center mb-4">
-                          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
                       </div>
-                      <h3 class="font-bold text-gray-900 mb-2">Clear Eligibility</h3>
+                      <h3 class="font-bold mb-2">Clear Eligibility</h3>
                       <p class="text-sm text-gray-600">Qualify via income (≤135% FPG) or SNAP, Medicaid, SSI, etc.</p>
-                  </div>
-                  <!-- Item 3 -->
-                  <div class="flex flex-col items-start p-4 rounded-xl hover:bg-slate-50 transition-colors">
-                      <div class="w-12 h-12 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center mb-4">
-                          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
-                      </div>
-                      <h3 class="font-bold text-gray-900 mb-2">Safe Application</h3>
-                      <p class="text-sm text-gray-600">Apply directly through National Verifier, then pick a provider.</p>
-                  </div>
-                  <!-- Item 4 -->
-                  <div class="flex flex-col items-start p-4 rounded-xl hover:bg-slate-50 transition-colors">
-                      <div class="w-12 h-12 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center mb-4">
-                          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                      </div>
-                      <h3 class="font-bold text-gray-900 mb-2">No Scam Guarantee</h3>
-                      <p class="text-sm text-gray-600">Zero upfront fees. Only trust FCC-verified and approved sources.</p>
                   </div>
               </div>
           </div>
       </section>
 
-      <!-- Available Programs Section -->
-      <section id="programs" class="section-padding">
-          <div class="container-custom">
+      <!-- Available Programs -->
+      <section id="programs" class={sectionPadding}>
+          <div class={containerClass}>
               <div class="text-center mb-16 max-w-3xl mx-auto">
                   <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6">Available Government Programs</h2>
-                  <p class="text-lg text-gray-600">Explore legitimate federal and state programs providing free tablets to eligible low-income households.</p>
+                  <p class="text-lg text-gray-600">Explore legitimate federal and state programs providing free tablets.</p>
               </div>
 
-              <div class="card-base p-8 lg:p-12 bg-white">
-                  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div class="bg-white rounded-2xl border border-gray-100 shadow-xl p-8 lg:p-12">
+                  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center text-gray-800">
                       <div>
                           <div class="flex items-center space-x-4 mb-6">
                               <div class="p-3 bg-blue-100 rounded-xl">
@@ -228,42 +194,11 @@ const SITE_DESCRIPTION = "Get your free government tablet or phone through legit
                                   <span class="inline-block mt-1 px-3 py-1 bg-green-100 text-green-800 text-xs font-bold rounded-full uppercase tracking-wider">Active 2026</span>
                               </div>
                           </div>
-                          <p class="text-gray-600 text-lg mb-8">The federal Lifeline program provides eligible low-income subscribers with a monthly discount on qualifying voice and broadband services, plus a free or heavily discounted device from participating providers.</p>
-                          
-                          <div class="space-y-4 mb-8">
-                              <div class="flex items-center space-x-3 bg-slate-50 p-4 rounded-xl border border-slate-100">
-                                  <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                                  <span class="text-gray-800 font-medium">Free Smartphones & Tablets (Android & iOS options)</span>
-                              </div>
-                              <div class="flex items-center space-x-3 bg-slate-50 p-4 rounded-xl border border-slate-100">
-                                  <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                                  <span class="text-gray-800 font-medium">Up to $9.25 monthly service discount</span>
-                              </div>
-                              <div class="flex items-center space-x-3 bg-slate-50 p-4 rounded-xl border border-slate-100">
-                                  <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                                  <span class="text-gray-800 font-medium">Enhanced Tribal lands benefit up to $34.25</span>
-                              </div>
-                          </div>
-                          <a href="#apply" class="btn-primary w-full sm:w-auto">Start Application</a>
+                          <p class="text-gray-600 text-lg mb-8">The federal Lifeline program provides eligible low-income subscribers with a monthly discount on service and a free device.</p>
+                          <a href="#apply" class={btnPrimary}>Start Application</a>
                       </div>
-                      
-                      <div class="relative">
-                          <!-- Image representation -->
-                          <div class="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl relative">
-                              <img src="https://images.unsplash.com/photo-1544396821-4dd40b938ad3?q=80&w=2073&auto=format&fit=crop" alt="Person using a tablet" class="w-full h-full object-cover" />
-                              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                              <div class="absolute bottom-6 left-6 right-6">
-                                  <div class="bg-white/90 backdrop-blur rounded-xl p-4 shadow-lg flex items-center justify-between">
-                                      <div>
-                                          <p class="text-sm text-gray-500 font-medium">Monthly Data Plan</p>
-                                          <p class="text-xl font-bold text-gray-900">Included Free</p>
-                                      </div>
-                                      <div class="h-10 w-10 bg-green-100 rounded-full flex items-center justify-center">
-                                          <svg class="w-6 h-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
+                      <div class="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+                          <img src="https://images.unsplash.com/photo-1544396821-4dd40b938ad3?q=80&w=2073&auto=format&fit=crop" alt="Person using a tablet" class="w-full h-full object-cover" />
                       </div>
                   </div>
               </div>
@@ -271,469 +206,133 @@ const SITE_DESCRIPTION = "Get your free government tablet or phone through legit
       </section>
 
       <!-- Eligibility Section -->
-      <section id="eligibility" class="section-padding bg-slate-100">
-          <div class="container-custom max-w-5xl">
+      <section id="eligibility" class={`${sectionPadding} bg-slate-100`}>
+          <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
               <div class="text-center mb-16">
                   <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6">Check Your Eligibility</h2>
-                  <p class="text-lg text-gray-600">Find out if you qualify in under a minute. If you participate in any of these programs, you're likely eligible.</p>
               </div>
-
               <div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-gray-200">
-                  <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                      
-                      <!-- Qualifying Programs -->
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-10 text-gray-800">
                       <div>
-                          <h3 class="text-xl font-bold text-gray-900 mb-6 flex items-center border-b pb-4">
-                              <svg class="w-6 h-6 text-blue-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                              Option 1: Government Programs
-                          </h3>
+                          <h3 class="text-xl font-bold mb-6 flex items-center border-b pb-4">Option 1: Programs</h3>
                           <div class="space-y-3">
-                              <label class="flex items-center p-3 rounded-xl border border-gray-100 hover:bg-slate-50 cursor-pointer transition-colors">
-                                  <input type="checkbox" class="w-5 h-5 text-blue-600 rounded border-gray-300 focus:ring-blue-500" />
-                                  <span class="ml-3 text-gray-700 font-medium">SNAP (Food Stamps)</span>
-                              </label>
-                              <label class="flex items-center p-3 rounded-xl border border-gray-100 hover:bg-slate-50 cursor-pointer transition-colors">
-                                  <input type="checkbox" class="w-5 h-5 text-blue-600 rounded border-gray-300 focus:ring-blue-500" />
-                                  <span class="ml-3 text-gray-700 font-medium">Medicaid</span>
-                              </label>
-                              <label class="flex items-center p-3 rounded-xl border border-gray-100 hover:bg-slate-50 cursor-pointer transition-colors">
-                                  <input type="checkbox" class="w-5 h-5 text-blue-600 rounded border-gray-300 focus:ring-blue-500" />
-                                  <span class="ml-3 text-gray-700 font-medium">Supplemental Security Income (SSI)</span>
-                              </label>
-                              <label class="flex items-center p-3 rounded-xl border border-gray-100 hover:bg-slate-50 cursor-pointer transition-colors">
-                                  <input type="checkbox" class="w-5 h-5 text-blue-600 rounded border-gray-300 focus:ring-blue-500" />
-                                  <span class="ml-3 text-gray-700 font-medium">Federal Public Housing Assistance</span>
-                              </label>
-                              <label class="flex items-center p-3 rounded-xl border border-gray-100 hover:bg-slate-50 cursor-pointer transition-colors">
-                                  <input type="checkbox" class="w-5 h-5 text-blue-600 rounded border-gray-300 focus:ring-blue-500" />
-                                  <span class="ml-3 text-gray-700 font-medium">Veterans Pension / Survivors Benefit</span>
-                              </label>
+                              {["SNAP", "Medicaid", "SSI", "Public Housing", "Veterans Pension"].map((p) => (
+                                <label class="flex items-center p-3 rounded-xl border border-gray-100 hover:bg-slate-50 cursor-pointer transition-colors">
+                                    <input type="checkbox" class="w-5 h-5 text-blue-600 rounded border-gray-300" />
+                                    <span class="ml-3 text-gray-700 font-medium">{p}</span>
+                                </label>
+                              ))}
                           </div>
                       </div>
-
-                      <!-- Income Guidelines -->
                       <div>
-                          <h3 class="text-xl font-bold text-gray-900 mb-6 flex items-center border-b pb-4">
-                              <svg class="w-6 h-6 text-blue-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                              Option 2: Income Guidelines
-                          </h3>
-                          <p class="text-sm text-gray-600 mb-4">You also qualify if your household income is at or below 135% of the Federal Poverty Guidelines.</p>
-                          
-                          <div class="bg-blue-50 rounded-xl p-5 border border-blue-100">
-                              <h4 class="font-semibold text-blue-900 mb-3">2026 Household Income Limits:</h4>
-                              <ul class="space-y-2 text-sm text-gray-700">
-                                  <li class="flex justify-between border-b border-blue-200/50 pb-1"><span>1 Person:</span> <span class="font-bold text-gray-900">$21,128</span></li>
-                                  <li class="flex justify-between border-b border-blue-200/50 pb-1"><span>2 People:</span> <span class="font-bold text-gray-900">$28,553</span></li>
-                                  <li class="flex justify-between border-b border-blue-200/50 pb-1"><span>3 People:</span> <span class="font-bold text-gray-900">$35,978</span></li>
-                                  <li class="flex justify-between border-b border-blue-200/50 pb-1"><span>4 People:</span> <span class="font-bold text-gray-900">$43,403</span></li>
-                                  <li class="flex justify-between pt-1"><span>Each extra person:</span> <span class="font-bold text-gray-900">Add $7,425</span></li>
+                          <h3 class="text-xl font-bold mb-6 flex items-center border-b pb-4">Option 2: Income</h3>
+                          <div class="bg-blue-50 rounded-xl p-5 border border-blue-100 text-sm">
+                              <p class="mb-4">Qualify if household income is at or below 135% of Federal Poverty Guidelines.</p>
+                              <ul class="space-y-2">
+                                  <li class="flex justify-between border-b border-blue-200/50 pb-1"><span>1 Person:</span> <b>$21,128</b></li>
+                                  <li class="flex justify-between border-b border-blue-200/50 pb-1"><span>4 People:</span> <b>$43,403</b></li>
                               </ul>
                           </div>
-                          
-                          <div class="mt-8 text-center">
-                              <button class="btn-primary w-full shadow-blue-500/30 text-lg py-4">Verify Eligibility Now</button>
-                          </div>
+                          <button class={`${btnPrimary} w-full mt-8 py-4`}>Verify Now</button>
                       </div>
                   </div>
               </div>
           </div>
       </section>
 
-      <!-- Top Approved Providers -->
-      <section id="providers" class="section-padding">
-          <div class="container-custom">
-              <div class="text-center mb-16 max-w-3xl mx-auto">
-                  <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6">Top Approved Providers</h2>
-                  <p class="text-lg text-gray-600">Choose from the most reliable FCC-approved companies offering high-quality tablets and nationwide coverage.</p>
-              </div>
-
+      <!-- Providers Section -->
+      <section id="providers" class={sectionPadding}>
+          <div class={containerClass}>
+              <h2 class="text-3xl md:text-5xl font-bold text-center mb-16 text-gray-900">Top Approved Providers</h2>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <!-- Provider 1 -->
-                  <div class="card-interactive flex flex-col p-6 sm:p-8 relative border-t-4 border-t-blue-500">
-                      <div class="absolute top-4 right-4 bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full">Top Rated</div>
+                  <div class={`${cardInteractive} p-8 border-t-4 border-t-blue-500`}>
                       <div class="flex items-center space-x-4 mb-6">
-                          <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-500 to-blue-700 text-white flex items-center justify-center font-bold text-2xl shadow-lg">QL</div>
-                          <div>
-                              <h3 class="text-2xl font-bold text-gray-900">Q Link Wireless</h3>
-                              <div class="flex items-center text-yellow-400 mt-1">
-                                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                  <svg class="w-4 h-4 text-gray-300 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                  <span class="text-sm text-gray-500 ml-2">(4.8)</span>
-                              </div>
-                          </div>
+                          <div class="w-16 h-16 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold text-2xl shadow-lg">QL</div>
+                          <h3 class="text-2xl font-bold text-gray-900">Q Link Wireless</h3>
                       </div>
-                      <div class="mb-5 flex-grow">
-                          <p class="font-semibold text-gray-800 mb-2">Available Devices:</p>
-                          <div class="flex flex-wrap gap-2 mb-4">
-                              <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs rounded-lg font-medium">Samsung Tabs</span>
-                              <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs rounded-lg font-medium">Android Devices</span>
-                          </div>
-                          <ul class="space-y-2 text-sm text-gray-600">
-                              <li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Free unlimited talk & text</li>
-                              <li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Fast Nationwide 5G Network</li>
-                          </ul>
-                      </div>
-                      <button class="btn-secondary w-full">Learn More</button>
+                      <button class={`${btnSecondary} w-full`}>Learn More</button>
                   </div>
-
-                  <!-- Provider 2 -->
-                  <div class="card-interactive flex flex-col p-6 sm:p-8 relative">
-                      <div class="flex items-center space-x-4 mb-6">
-                          <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-green-400 to-emerald-600 text-white flex items-center justify-center font-bold text-2xl shadow-lg">AW</div>
-                          <div>
-                              <h3 class="text-2xl font-bold text-gray-900">AirTalk Wireless</h3>
-                              <div class="flex items-center text-yellow-400 mt-1">
-                                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                  <svg class="w-4 h-4 text-gray-300 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                  <span class="text-sm text-gray-500 ml-2">(4.6)</span>
-                              </div>
-                          </div>
+                  <div class={`${cardInteractive} p-8`}>
+                      <div class="flex items-center space-x-4 mb-6 text-gray-900">
+                          <div class="w-16 h-16 rounded-xl bg-green-500 text-white flex items-center justify-center font-bold text-2xl shadow-lg">AW</div>
+                          <h3 class="text-2xl font-bold">AirTalk Wireless</h3>
                       </div>
-                      <div class="mb-5 flex-grow">
-                          <p class="font-semibold text-gray-800 mb-2">Available Devices:</p>
-                          <div class="flex flex-wrap gap-2 mb-4">
-                              <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs rounded-lg font-medium">Apple iPads</span>
-                              <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs rounded-lg font-medium">Samsung Galaxy Tabs</span>
-                          </div>
-                          <ul class="space-y-2 text-sm text-gray-600">
-                              <li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Huge selection of premium devices</li>
-                              <li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Outstanding customer support</li>
-                          </ul>
-                      </div>
-                      <button class="btn-secondary w-full">Learn More</button>
-                  </div>
-
-                  <!-- Provider 3 -->
-                  <div class="card-interactive flex flex-col p-6 sm:p-8 relative">
-                      <div class="flex items-center space-x-4 mb-6">
-                          <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-purple-500 to-indigo-700 text-white flex items-center justify-center font-bold text-2xl shadow-lg">SU</div>
-                          <div>
-                              <h3 class="text-2xl font-bold text-gray-900">Stand Up Wireless</h3>
-                              <div class="flex items-center text-yellow-400 mt-1">
-                                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                  <svg class="w-4 h-4 text-gray-300 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                  <span class="text-sm text-gray-500 ml-2">(4.1)</span>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="mb-5 flex-grow">
-                          <p class="font-semibold text-gray-800 mb-2">Available Devices:</p>
-                          <div class="flex flex-wrap gap-2 mb-4">
-                              <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs rounded-lg font-medium">Standard Tablets</span>
-                              <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs rounded-lg font-medium">Smartphones</span>
-                          </div>
-                          <ul class="space-y-2 text-sm text-gray-600">
-                              <li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Extremely simple application process</li>
-                              <li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Rapid processing and shipping</li>
-                          </ul>
-                      </div>
-                      <button class="btn-secondary w-full">Learn More</button>
-                  </div>
-
-                  <!-- Provider 4 -->
-                  <div class="card-interactive flex flex-col p-6 sm:p-8 relative">
-                      <div class="flex items-center space-x-4 mb-6">
-                          <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-rose-500 to-red-700 text-white flex items-center justify-center font-bold text-2xl shadow-lg">AW</div>
-                          <div>
-                              <h3 class="text-2xl font-bold text-gray-900">Assurance Wireless</h3>
-                              <div class="flex items-center text-yellow-400 mt-1">
-                                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                  <svg class="w-4 h-4 text-gray-300 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                  <span class="text-sm text-gray-500 ml-2">(4.3)</span>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="mb-5 flex-grow">
-                          <p class="font-semibold text-gray-800 mb-2">Available Devices:</p>
-                          <div class="flex flex-wrap gap-2 mb-4">
-                              <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs rounded-lg font-medium">Basic Phones</span>
-                              <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs rounded-lg font-medium">Android Tablets</span>
-                          </div>
-                          <ul class="space-y-2 text-sm text-gray-600">
-                              <li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Established T-Mobile Network partner</li>
-                              <li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Coverage in most rural areas</li>
-                          </ul>
-                      </div>
-                      <button class="btn-secondary w-full">Learn More</button>
-                  </div>
-              </div>
-          </div>
-      </section>
-
-      <!-- Testimonial Section -->
-      <section class="section-padding bg-slate-900 text-white">
-          <div class="container-custom">
-              <div class="text-center mb-16">
-                  <h2 class="text-3xl md:text-5xl font-bold mb-6">Real Stories from Real People</h2>
-                  <p class="text-lg text-slate-400 max-w-3xl mx-auto">Hear how government tablet programs are making a real difference across America.</p>
-              </div>
-
-              <div class="max-w-5xl mx-auto bg-slate-800 rounded-3xl p-8 md:p-12 shadow-2xl border border-slate-700">
-                  <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                      <div>
-                          <div class="flex text-yellow-400 mb-6">
-                              <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                              <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                              <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                              <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                              <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                          </div>
-                          <blockquote class="text-xl lg:text-2xl text-slate-300 leading-relaxed font-light italic mb-8 relative">
-                              <span class="absolute -top-6 -left-4 text-5xl text-slate-700 font-serif">"</span>
-                              Getting my free tablet through the Lifeline program has been life-changing. I can now video call my grandchildren, access my medical records online, and even take virtual doctor appointments. The process was straightforward, and the customer service was excellent.
-                          </blockquote>
-                          <div>
-                              <div class="font-bold text-lg text-white">Maria Rodriguez</div>
-                              <div class="text-slate-400">Age 67 • Phoenix, AZ</div>
-                              <div class="mt-3 flex gap-2">
-                                  <span class="bg-blue-900/50 text-blue-300 text-xs px-2 py-1 rounded">Lifeline Program</span>
-                                  <span class="bg-green-900/50 text-green-300 text-xs px-2 py-1 rounded">Samsung Tab</span>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="relative flex justify-center">
-                          <div class="w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden shadow-2xl relative border-4 border-slate-700">
-                              <img src="https://images.unsplash.com/photo-1573155993874-d5d48af862ba?q=80&w=1974&auto=format&fit=crop" alt="Happy senior woman with tablet" class="w-full h-full object-cover" />
-                          </div>
-                      </div>
+                      <button class={`${btnSecondary} w-full`}>Learn More</button>
                   </div>
               </div>
           </div>
       </section>
 
       <!-- FAQ Section -->
-      <section id="faq" class="section-padding bg-slate-50">
-          <div class="container-custom max-w-4xl">
-              <div class="text-center mb-12">
-                  <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
-                  <p class="text-lg text-gray-600">Got questions? We've got answers to help you navigate the process.</p>
-              </div>
-
+      <section id="faq" class={`${sectionPadding} bg-slate-50 text-gray-800`}>
+          <div class="max-w-4xl mx-auto px-4">
+              <h2 class="text-3xl md:text-5xl font-bold text-center mb-12">Frequently Asked Questions</h2>
               <div class="space-y-4">
-                  <!-- FAQ Item 1 -->
-                  <div class="card-base overflow-hidden">
-                      <button class="w-full px-6 py-5 text-left flex items-center justify-between focus:outline-none faq-btn">
-                          <span class="text-lg font-bold text-gray-900">What is a free government tablet program?</span>
-                          <svg class="w-6 h-6 text-blue-500 transform transition-transform faq-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                      </button>
-                      <div class="faq-content hidden px-6 pb-6 text-gray-600">
-                          Free government tablet programs are federal and state initiatives that provide tablets and internet access to eligible low-income households. The main federal program is Lifeline, which offers monthly service discounts and free/discounted devices to qualifying families.
-                      </div>
-                  </div>
-
-                  <!-- FAQ Item 2 -->
-                  <div class="card-base overflow-hidden">
-                      <button class="w-full px-6 py-5 text-left flex items-center justify-between focus:outline-none faq-btn">
-                          <span class="text-lg font-bold text-gray-900">Who qualifies for free government tablets?</span>
-                          <svg class="w-6 h-6 text-blue-500 transform transition-transform faq-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                      </button>
-                      <div class="faq-content hidden px-6 pb-6 text-gray-600">
-                          You may qualify if your household income is at or below 135% of the Federal Poverty Guidelines, or if you participate in qualifying programs like SNAP, Medicaid, SSI, Federal Public Housing Assistance, Veterans Pension, WIC, or Free/Reduced School Lunch programs.
-                      </div>
-                  </div>
-
-                  <!-- FAQ Item 3 -->
-                  <div class="card-base overflow-hidden">
-                      <button class="w-full px-6 py-5 text-left flex items-center justify-between focus:outline-none faq-btn">
-                          <span class="text-lg font-bold text-gray-900">Are there any hidden fees or costs involved?</span>
-                          <svg class="w-6 h-6 text-blue-500 transform transition-transform faq-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                      </button>
-                      <div class="faq-content hidden px-6 pb-6 text-gray-600">
-                          Legitimate government tablet programs do not charge upfront fees for basic devices. You may need to pay a small co-payment (typically $10-$50) if you choose a premium device upgrade, but basic tablets and standard monthly service are completely free for eligible households. Beware of scams asking for large upfront fees.
-                      </div>
-                  </div>
-
-                  <!-- FAQ Item 4 -->
-                  <div class="card-base overflow-hidden">
-                      <button class="w-full px-6 py-5 text-left flex items-center justify-between focus:outline-none faq-btn">
-                          <span class="text-lg font-bold text-gray-900">How long does the application process take?</span>
-                          <svg class="w-6 h-6 text-blue-500 transform transition-transform faq-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                      </button>
-                      <div class="faq-content hidden px-6 pb-6 text-gray-600">
-                          Eligibility verification through the National Verifier typically takes just a few minutes online, but can take up to 7-10 business days if manual document review is required. Once approved, device shipping usually takes 5-7 business days.
-                      </div>
-                  </div>
-              </div>
-              
-              <div class="mt-10 text-center">
-                  <p class="text-gray-500 mb-4">Still have questions?</p>
-                  <a href="#contact" class="text-blue-600 font-bold hover:underline">Contact our support team</a>
+                  {[
+                    { q: "What is a free government tablet program?", a: "Federal and state initiatives providing technology to low-income households." },
+                    { q: "Who qualifies?", a: "Anyone under 135% poverty level or receiving government assistance like SNAP/Medicaid." }
+                  ].map((item) => (
+                    <div class="bg-white rounded-2xl border border-gray-100 shadow-xl overflow-hidden">
+                        <button class="w-full px-6 py-5 text-left flex items-center justify-between faq-btn">
+                            <span class="text-lg font-bold">{item.q}</span>
+                            <svg class="w-6 h-6 text-blue-500 transform transition-transform faq-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6 text-gray-600">{item.a}</div>
+                    </div>
+                  ))}
               </div>
           </div>
       </section>
 
       <!-- Final CTA -->
-      <section id="apply" class="section-padding bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
+      <section id="apply" class={`${sectionPadding} bg-gradient-to-r from-blue-600 to-indigo-700 text-white`}>
           <div class="container-custom text-center">
               <h2 class="text-4xl md:text-5xl font-extrabold mb-6">Ready to Get Your Free Tablet?</h2>
-              <p class="text-xl text-blue-100 max-w-2xl mx-auto mb-10">Join millions of Americans who have already received free tablets through legitimate government programs. Bridge the digital divide today.</p>
-              <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                  <button class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-blue-900 bg-white rounded-xl hover:bg-gray-50 transition-all shadow-xl hover:-translate-y-1">
-                      Apply Now
-                  </button>
-              </div>
-              <p class="mt-6 text-sm text-blue-200">🔒 Your information is secure. We only direct you to FCC-approved providers.</p>
+              <button class="px-8 py-4 text-lg font-bold text-blue-900 bg-white rounded-xl hover:bg-gray-50 transition-all shadow-xl">Apply Now</button>
           </div>
       </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="bg-gray-900 text-white pt-16 pb-8 border-t border-gray-800">
-      <div class="container-custom">
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-              <!-- Column 1 -->
-              <div>
-                  <div class="flex items-center space-x-2 mb-6">
-                      <svg class="h-8 w-8 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect width="16" height="20" x="4" y="2" rx="2" ry="2" stroke-width="2"></rect><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="2" stroke-linecap="round"></line></svg>
-                      <span class="text-xl font-bold">FreeGovTablet</span>
-                  </div>
-                  <p class="text-gray-400 text-sm leading-relaxed mb-6">Your trusted resource for finding legitimate free government tablet programs. We help eligible families access technology safely and securely.</p>
+  <footer class="bg-gray-900 text-white pt-16 pb-8">
+      <div class={containerClass}>
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+              <div class="col-span-1 md:col-span-2">
+                  <span class="text-xl font-bold mb-4 block">FreeGovTablet</span>
+                  <p class="text-gray-400">Helping eligible families access technology safely through official programs.</p>
               </div>
-              
-              <!-- Column 2 -->
               <div>
-                  <h3 class="text-lg font-semibold mb-6 text-white">Quick Links</h3>
+                  <h3 class="font-semibold mb-6">Quick Links</h3>
                   <ul class="space-y-3 text-sm text-gray-400">
-                      <li><a href="#programs" class="hover:text-blue-400 transition">Government Programs</a></li>
-                      <li><a href="#eligibility" class="hover:text-blue-400 transition">Eligibility Requirements</a></li>
-                      <li><a href="#apply" class="hover:text-blue-400 transition">How to Apply</a></li>
-                      <li><a href="#faq" class="hover:text-blue-400 transition">FAQ</a></li>
-                  </ul>
-              </div>
-
-              <!-- Column 3 -->
-              <div>
-                  <h3 class="text-lg font-semibold mb-6 text-white">Device Types</h3>
-                  <ul class="space-y-3 text-sm text-gray-400">
-                      <li><a href="#" class="hover:text-blue-400 transition">Free Tablet with EBT</a></li>
-                      <li><a href="#" class="hover:text-blue-400 transition">Free Government iPhone</a></li>
-                      <li><a href="#" class="hover:text-blue-400 transition">Free iPad from Government</a></li>
-                      <li><a href="#" class="hover:text-blue-400 transition">Free Tablet for Seniors</a></li>
-                  </ul>
-              </div>
-
-              <!-- Column 4 -->
-              <div>
-                  <h3 class="text-lg font-semibold mb-6 text-white">Official Resources</h3>
-                  <ul class="space-y-3 text-sm text-gray-400">
-                      <li><a href="#" class="hover:text-blue-400 transition flex items-center">FCC Lifeline <svg class="w-3 h-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a></li>
-                      <li><a href="#" class="hover:text-blue-400 transition flex items-center">National Verifier <svg class="w-3 h-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a></li>
-                      <li><a href="#" class="hover:text-blue-400 transition flex items-center">Benefits.gov <svg class="w-3 h-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a></li>
+                      <li><a href="#programs" class="hover:text-blue-400">Programs</a></li>
+                      <li><a href="#eligibility" class="hover:text-blue-400">Eligibility</a></li>
                   </ul>
               </div>
           </div>
-
-          <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
-              <div class="mb-4 md:mb-0">
-                  &copy; 2026 FreeGovTablet. All rights reserved.
-              </div>
-              <div class="flex space-x-6">
-                  <a href="#" class="hover:text-gray-300">Privacy Policy</a>
-                  <a href="#" class="hover:text-gray-300">Terms of Service</a>
-                  <a href="#" class="hover:text-gray-300">Disclaimer</a>
-              </div>
-          </div>
-          
-          <div class="mt-6 text-xs text-gray-600 text-center">
-              <p><strong>Disclaimer:</strong> FreeGovTablet is an independent informational resource and is not affiliated with any government agency. We provide guidance on legitimate government programs but do not process applications or guarantee program approval. Always verify information through official government sources.</p>
+          <div class="border-t border-gray-800 pt-8 text-xs text-gray-500 text-center">
+              &copy; 2026 FreeGovTablet. Independent informational resource.
           </div>
       </div>
   </footer>
 
-  <!-- SEO JSON-LD Scripts -->
-  <script is:inline type="application/ld+json">
-    {JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      name: SITE_TITLE,
-      url: SITE_URL,
-      description: SITE_DESCRIPTION,
-      inLanguage: "en"
-    })}
-  </script>
-
-  <script is:inline type="application/ld+json">
-    {JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: [
-        {
-          "@type": "Question",
-          name: "Is the free government phone benefit real?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes. Lifeline is a real federal benefit that helps eligible households reduce the cost of phone service. Device availability depends on participating providers and inventory."
-          }
-        },
-        {
-          "@type": "Question",
-          name: "What do I need to apply?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Typically you need proof of identity and proof of eligibility, such as program participation or income documentation, plus an address where service will be used."
-          }
-        },
-        {
-          "@type": "Question",
-          name: "Are there any hidden fees?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "No. Legitimate Lifeline and ACP providers will never ask for credit card information or charge hidden monthly fees for standard approved plans."
-          }
-        }
-      ]
-    })}
-  </script>
-
-  <!-- Interactive Scripts (Mobile Menu & FAQs) -->
-  <script>
+  <!-- Interactivity Scripts -->
+  <script is:inline>
       document.addEventListener('DOMContentLoaded', () => {
-          // Mobile Menu Toggle
+          // Mobile Menu
           const mobileBtn = document.getElementById('mobile-menu-btn');
           const mobileMenu = document.getElementById('mobile-menu');
-          
           if(mobileBtn && mobileMenu) {
-              mobileBtn.addEventListener('click', () => {
-                  mobileMenu.classList.toggle('hidden');
-              });
-
-              // Close mobile menu on link click
-              document.querySelectorAll('#mobile-menu a').forEach(link => {
-                  link.addEventListener('click', () => {
-                      mobileMenu.classList.add('hidden');
-                  });
-              });
+              mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
           }
 
-          // FAQ Accordion Logic
+          // FAQs
           const faqBtns = document.querySelectorAll('.faq-btn');
-          
           faqBtns.forEach(btn => {
               btn.addEventListener('click', () => {
                   const content = btn.nextElementSibling;
                   const icon = btn.querySelector('.faq-icon');
-                  
-                  // Add null checks for TypeScript (Astro check)
                   if (content && icon) {
-                      // Toggle current
                       content.classList.toggle('hidden');
-                      if (content.classList.contains('hidden')) {
-                          icon.classList.remove('rotate-180');
-                      } else {
-                          icon.classList.add('rotate-180');
-                      }
+                      icon.classList.toggle('rotate-180');
                   }
               });
           });
@@ -741,30 +340,10 @@ const SITE_DESCRIPTION = "Get your free government tablet or phone through legit
   </script>
 </Layout>
 
-<!-- Global Styles for Custom Components and Scrollbar -->
 <style is:global>
-  @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
-
-  @layer components {
-      .container-custom { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
-      .section-padding { @apply py-16 lg:py-24; }
-      .btn-primary { @apply inline-flex items-center justify-center px-6 py-3 text-sm md:text-base font-semibold text-white bg-blue-600 rounded-xl hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-blue-600/30 transform hover:-translate-y-0.5; }
-      .btn-secondary { @apply inline-flex items-center justify-center px-6 py-3 text-sm md:text-base font-semibold text-blue-600 bg-white border border-blue-200 rounded-xl hover:bg-blue-50 transition-all duration-300 shadow-sm transform hover:-translate-y-0.5; }
-      .card-base { @apply bg-white rounded-2xl border border-gray-100 shadow-xl; }
-      .card-interactive { @apply card-base shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 overflow-hidden; }
-      .nav-link { @apply flex items-center space-x-1 text-gray-600 hover:text-blue-600 font-medium text-sm px-3 py-2 rounded-lg hover:bg-blue-50 transition-all; }
-  }
-  
-  /* Custom scrollbar for a premium feel */
+  /* Ensuring smooth scroll and basic layout */
+  html { scroll-behavior: smooth; }
   ::-webkit-scrollbar { width: 8px; }
   ::-webkit-scrollbar-track { background: #f1f1f1; }
   ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
-  ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
-
-  /* Ensuring smooth scroll for anchor links */
-  html {
-      scroll-behavior: smooth;
-  }
 </style>
